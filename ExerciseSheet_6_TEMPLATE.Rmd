@@ -1,7 +1,7 @@
 ---
 title: "Exercise #X"
 subtitle: "Fortgeschrittene Statistische Software für NF"
-author: "Name (Martrikelnummer), Name (Martrikelnummer), ..."
+author: "Anay Burugupalli (12750156), Metin Istutan (12349723)"
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -71,21 +71,32 @@ f)  The `DESCRIPTION` file of your package should be properly formatted
 
 ### Submission
 
-a)  Briefly describe in one - two sentences what your R package does and
-    why you decided to choose this functionality. This is just intended
-    to give us some context to better understand the package.
+Mein R-Package `datatoolboxR` bietet einfache Werkzeuge zur Datenbereinigung und Statistik. Es enthält Funktionen, um fehlende Werte aus Dataframes zu entfernen und Basisstatistiken (Mittelwert, Median, Standardabweichung, Anzahl fehlender Werte) für numerische Spalten zu berechnen. Ich habe diese Funktionalität gewählt, weil sie in vielen Datenanalyse-Projekten nützlich ist.
 
-b)  To make installation easier, your R package should be in a public
-    repository on GitHub. Provide the URL to the GitHub repository
-    below:
+b) GitHub-Repository:
 
-e.g. `https://github.com/<YOUR_GH_USERNAME>/<PACKAGE_REPOSITORY_NAME>`
+https://github.com/aburugupalli/Uebungsblatt_6
 
-c)  Your R package should be installable via
-    `remotes::install_github()`. Before submitting your solution to this
-    exercise sheet please test whether you can install your R package
-    from GitHub. Provide the command below:
+c) Installationsbefehl:
 
-``` r
-remotes::install_github("<YOUR_GH_USERNAME>/<PACKAGE_REPOSITORY_NAME>")
+```r
+remotes::install_github("aburugupalli/Uebungsblatt_6/datatooboxR")
+```
+
+### Beispiel: Nutzung des Packages
+
+```{r}
+# Package laden (lokal, während Entwicklung)
+devtools::load_all("datatoolboxR")
+
+# Beispiel-Daten
+df <- data.frame(a = c(1, NA, 3, 4), b = c(NA, 2, 3, 4))
+
+# remove_na anwenden
+clean_df <- remove_na(df)
+print(clean_df)
+
+# summary_stats anwenden
+stats_a <- summary_stats(df, "a")
+print(stats_a)
 ```

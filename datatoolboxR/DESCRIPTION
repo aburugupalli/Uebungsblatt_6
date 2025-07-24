@@ -1,0 +1,10 @@
+Package: datatoolboxR
+Type: Package
+Title: Simple Data Analysis Toolbox
+Version: 0.1.0
+Author: Anay Burugupalli [aut, cre] (12750156), Metin Istutan [aut] (12349723)
+Maintainer: Anay Burugupalli <your.email@example.com>
+Description: Provides simple data analysis functions: remove_na and summary_stats.
+License: MIT
+Encoding: UTF-8
+LazyData: true
